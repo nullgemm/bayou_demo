@@ -9,10 +9,13 @@ OBJD = obj
 SRCD = src
 SUBD = sub
 
-INCL = -I$(SRCD)
+INCL = -I$(SRCD) -I$(SUBD)/bayou/src -I$(SUBD)/termbox_next/src
 SRCS = $(SRCD)/main.c
+SRCS+= $(SUBD)/bayou/src/bayou.c
+SRCS+= $(SUBD)/bayou/src/short.c
 
 SRCS_OBJS := $(patsubst %.c,$(OBJD)/%.o,$(SRCS))
+SRCS_OBJS += $(SUBD)/termbox_next/bin/termbox.a
 
 # aliases
 .PHONY: final
@@ -23,6 +26,10 @@ $(OBJD)/%.o: %.c
 	@echo "building object $@"
 	@mkdir -p $(@D)
 	@$(CC) $(INCL) $(FLAGS) -c -o $@ $<
+
+$(SUBD)/termbox_next/bin/termbox.a:
+	@echo "building static object $@"
+	@(cd $(SUBD)/termbox_next && $(MAKE))
 
 # final executable
 $(BIND)/$(NAME): $(SRCS_OBJS)
