@@ -1,0 +1,6 @@
+[submodule "sub/bayou"]
+	path = sub/bayou
+	url = https://git.cylgom.net/cylgom/bayou
+[submodule "sub/termbox_next"]
+	path = sub/termbox_next
+	url = https://git.cylgom.net/cylgom/termbox_next
