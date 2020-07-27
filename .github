@@ -1,6 +1,6 @@
 [submodule "sub/bayou"]
 	path = sub/bayou
-	url = https://github.com/cylgom/bayou
+	url = https://github.com/nullgemm/bayou
 [submodule "sub/termbox_next"]
 	path = sub/termbox_next
-	url = https://github.com/cylgom/termbox_next
+	url = https://github.com/nullgemm/termbox_next
