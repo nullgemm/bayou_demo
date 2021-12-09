@@ -1,6 +1,0 @@
-[submodule "sub/bayou"]
-	path = sub/bayou
-	url = https://git.nullgemm.fr/nullgemm/bayou
-[submodule "sub/termbox_next"]
-	path = sub/termbox_next
-	url = https://git.nullgemm.fr/nullgemm/termbox_next

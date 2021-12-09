@@ -48,19 +48,3 @@ leakgrind: $(BIND)/$(NAME)
 clean:
 	@echo "cleaning"
 	@rm -rf $(BIND) $(OBJD) valgrind.log
-
-github:
-	@echo "sourcing submodules from https://github.com"
-	@cp .github .gitmodules
-	@git submodule sync
-	@git submodule update --init --remote
-	@cd $(SUBD)/bayou && make github
-	@git submodule update --init --recursive --remote
-
-gitea:
-	@echo "sourcing submodules from personal server"
-	@cp .gitea .gitmodules
-	@git submodule sync
-	@git submodule update --init --remote
-	@cd $(SUBD)/bayou && make gitea
-	@git submodule update --init --recursive --remote
